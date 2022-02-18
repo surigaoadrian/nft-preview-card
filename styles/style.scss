@@ -1,0 +1,130 @@
+@import "./variables";
+@import "./mixins";
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-family: "Outfit", sans-serif;
+}
+
+body {
+  background-color: $neutralColor1;
+  min-height: 100vh;
+  width: 100%;
+  @include flexCenter(row);
+}
+
+.card {
+  background-color: $neutralColor2;
+  width: 100%;
+  max-width: 350px;
+  padding: 20px;
+  border-radius: 15px;
+
+  .image {
+    position: relative;
+
+    img {
+      max-height: 100%;
+      max-width: 100%;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+
+    &:hover::after {
+      content: url(/images/icon-view.svg);
+      @include flexCenter(row);
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      border-radius: 10px;
+      background-color: rgba($color: $primaryColor2, $alpha: 0.5);
+      cursor: pointer;
+    }
+  }
+
+  .description {
+    h2 {
+      font-weight: 600;
+      font-size: 22px;
+      color: $neutralColor4;
+      margin: 20px 0;
+      cursor: pointer;
+
+      &:hover {
+        color: $primaryColor2;
+      }
+    }
+    p {
+      font-size: 18px;
+      font-weight: 300;
+      color: $primaryColor1;
+      margin-bottom: 20px;
+    }
+  }
+
+  .value-time {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 20px;
+    border-bottom: 1px solid $neutralColor3;
+
+    div {
+      display: flex;
+
+      :nth-child(2) {
+        margin-left: 10px;
+      }
+    }
+
+    .value p {
+      font-size: 14px;
+      font-weight: 600;
+      color: $primaryColor2;
+    }
+
+    .time p {
+      font-size: 14px;
+      font-weight: 600;
+      color: $primaryColor1;
+    }
+  }
+
+  .creator {
+    display: flex;
+    align-items: center;
+    margin: 15px 0;
+    img {
+      border: 1px solid $neutralColor4;
+      border-radius: 50%;
+      max-width: 30px;
+    }
+
+    p {
+      margin-left: 15px;
+      font-size: 16px;
+      color: $primaryColor1;
+    }
+
+    #creator-name {
+      color: $neutralColor4;
+      cursor: pointer;
+
+      &:hover {
+        color: $primaryColor2;
+      }
+    }
+  }
+}
+
+@media (max-width: 375px) {
+  .card {
+    max-width: 320px;
+  }
+}
