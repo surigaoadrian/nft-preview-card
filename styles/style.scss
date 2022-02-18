@@ -36,7 +36,7 @@ body {
     }
 
     &:hover::after {
-      content: url("/images/icon-view.svg");
+      content: url(/images/icon-view.svg);
       @include flexCenter(row);
       position: absolute;
       top: 0;
