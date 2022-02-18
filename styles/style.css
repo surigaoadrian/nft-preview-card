@@ -48,7 +48,7 @@ body {
 }
 
 .card .image:hover::after {
-  content: url(./images/icon-view.svg);
+  content: url("/images/icon-view.svg");
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
